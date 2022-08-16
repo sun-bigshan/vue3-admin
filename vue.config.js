@@ -1,4 +1,6 @@
 const path = require('path')
+const apiMocker = require('mocker-api')
+
 function resolve(dir) {
   return path.join(__dirname, dir)
 }
@@ -18,5 +20,10 @@ module.exports = {
         symbolId: 'icon-[name]'
       })
       .end()
+  },
+  devServer: {
+    before(app) {
+      apiMocker(app, path.resolve(__dirname, './mock/index.js'))
+    }
   }
 }

@@ -6,6 +6,8 @@ import installElementPlus from './plugins/element'
 // 导入 svgIcon
 import installIcons from '@/icons'
 
+import './permission'
+
 // 导入全局样式
 import './styles/index.scss'
 
